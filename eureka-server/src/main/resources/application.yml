@@ -1,0 +1,18 @@
+
+server:
+  port: 9090 # Eureka Server 端口
+
+eureka:
+#  instance:
+#    hostname: eureka9090 # host
+  client:
+    register-with-eureka: false # 是否注册自己到Eureka服务中
+    fetch-registry: false # 是否拉取注册信息
+    service-url:
+      defaultZone: http://localhost:9090/eureka/ # 客户端与Eureka服务交互url
+  server:
+    enable-self-preservation: false # 关闭自我保护机制
+    eviction-interval-timer-in-ms: 4000 # 服务端剔除不可用服务时间间隔，ms
+spring:
+  application:
+    name: shop-eureka-server
